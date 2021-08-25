@@ -27,7 +27,7 @@ script. The active learning technique is run from the "main.py" file.
 * scipy==1.6.3
 
 ## Execution
-Git LFS was used to compress a large fil containing a dataset for Dymos. Hence zip downloads from GitHub don't work. The repo has to be cloned.
+Git LFS was used to compress a large file containing a dataset for Dymos. Hence zip downloads from GitHub don't work. The repo has to be cloned.
 * create a new folder with path : my_path
 * open CMD
 * cd my_path
