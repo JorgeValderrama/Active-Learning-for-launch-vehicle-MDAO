@@ -17,9 +17,14 @@ To define a new  "ActiveLearningProblem" see the ""ActiveLearningProblem.py""
 script. The active learning technique is run from the "main.py" file.
 
 
-## Requirements
+## Main requirements
 * dymos ( v.0.15.0 included in this repository as this code is not compatible with the version available on the original repo. To see more on this, check issue #406 in the Dymos Github page.) https://github.com/OpenMDAO/dymos
 * openmdao==3.1.0
+* openturns==1.17
+* numpy==1.20.3
+* matplotlib==3.4.3
+* cma==3.1.0
+* scipy==1.6.3
 
 ## Execution
 Git LFS was used to compress a large fil containing a dataset for Dymos. Hence zip downloads from GitHub don't work. The repo has to be cloned.
