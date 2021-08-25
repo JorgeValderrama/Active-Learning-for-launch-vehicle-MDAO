@@ -22,7 +22,14 @@ script. The active learning technique is run from the "main.py" file.
 * openmdao==3.1.0
 
 ## Execution
-run the main.py file
+Git LFS was used to compress a large fil containing a dataset for Dymos. Hence zip downloads from GitHub don't work. The repo has to be cloned.
+* create a new folder with path : my_path
+* open CMD
+* cd my_path
+* git init
+* git clone "link to this repo"
+* run the main.py file 
+
 
 ### Acknowledgements
 This work was developed during my internship at ONERA - The French aerospace lab, and was possible thanks to guidance and help of Dr. Loïc Brevault and Dr. Mathieu Balesdent.
