@@ -1,6 +1,6 @@
 # Active learning technique for quantile estimation
 
-This code estimates a quantile of a unidemnsional field variable on an stochastic
+This code estimates a quantile of an uni-demnsional field variable of a stochastic
 process. It uses the Karhunen-Loève loeve (KL) decomposition to reduce the 
 dimensonality of the stochastic process and predict new outputs based on a 
 surrogate model  of the uncertain variables of the KL decomposition using
