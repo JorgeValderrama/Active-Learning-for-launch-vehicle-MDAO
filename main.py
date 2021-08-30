@@ -131,9 +131,10 @@ for i in range(enrichmentRuns+1):
     CIArea = reportAreaFunction( fullMetamodel, areaArgs )
     # run optimization loop if more samples are to be added using enrichment 
     if i < enrichmentRuns :
-        # change the Test variable of the CIArea method to False so that no
-        # test are runned
+        # change the Test and save variables of the CIArea method to False so that no
+        # tests  are runned nor info saved during optimization
         areaArgs[-3] = False
+        areaArgs[-4] = False
         optArgs = [popSize, njobs, iterations]
         # run optimization loop
         u_star = run_opt( ksi_u, pb, GPTrained, karhunenLoeveLiftingFunction, 
