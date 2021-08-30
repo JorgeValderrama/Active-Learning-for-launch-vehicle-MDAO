@@ -125,7 +125,7 @@ for i in range(enrichmentRuns+1):
     
     # pack area arguments
     areaArgs = [pb.mesh, pb.quantileEstimationInputSample,CIEta_CIAreaA, 
-                NSigma_CIAreaB, etaA, etaB, NumberOfAnalyses, i, True, 
+                NSigma_CIAreaB, etaA, etaB, NumberOfAnalyses, i, True, True, 
                 outputScalingArgs, resultsPath] 
     # calculate and plot the confidence interval area 
     CIArea = reportAreaFunction( fullMetamodel, areaArgs )
