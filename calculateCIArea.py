@@ -77,13 +77,14 @@ def CIAreaA(fullMetamodel, areaArgs):
     ub_area = inte.simps(np.array(QQ_ub)[:,0], vertices[:,0]) 
     lb_area = inte.simps(np.array(QQ_lb)[:,0], vertices[:,0])
     CIArea  = ub_area - lb_area 
+    # obtain the estimated quantile with the mean realization of the 
+    # metamodel
+    # outputMetamodelMean = fullMetamodel.evaluateMeanRealization(quantileEstimationInputSample)
+    # QMean = outputMetamodelMean.computeQuantilePerComponent(etaA)
+    # save curves 
+    saveCIAreaCurves(QQ_ub, QQ_lb, QQ_mean, CIArea, scalingArgs, resultsPath, iterationNumber)
     
     if test ==True:
-        # obtain the estimated quantile with the mean realization of the 
-        # metamodel
-        outputMetamodelMean = fullMetamodel.evaluateMeanRealization(
-            quantileEstimationInputSample)
-        QMean = outputMetamodelMean.computeQuantilePerComponent(etaA)
         # plot the confidence interval
         plt.rcParams.update({'font.size': 16})
         plt.figure(figsize=[8,5])
@@ -100,9 +101,7 @@ def CIAreaA(fullMetamodel, areaArgs):
         # plt.ylim([-50,550])
         savePath = resultsPath+'/%i_CIArea'%iterationNumber
         # plt.savefig(savePath, dpi=400, bbox_inches='tight')
-        # save curves 
-        saveCIAreaCurves(QQ_ub, QQ_lb, QQ_mean, CIArea, scalingArgs, resultsPath,
-                         iterationNumber)
+        
         # plot trajectories
         # ======================================================================
         # plt.rcParams.update({'font.size': 16})
@@ -209,14 +208,14 @@ def CIAreaB(fullMetamodel, areaArgs):
     ub_area = inte.simps(np.array(Q_ub)[:,0], vertices[:,0]) 
     lb_area = inte.simps(np.array(Q_lb)[:,0], vertices[:,0])
     boundsArea = ub_area-lb_area
+    # metamodel mean realization quantile
+    outputMetamodelMean = fullMetamodel.evaluateMeanRealization(quantileEstimationInputSample)
+    QMean = outputMetamodelMean.computeQuantilePerComponent(etaB)
+    # save curves
+    saveCIAreaCurves(Q_ub, Q_lb, QMean, boundsArea, scalingArgs, resultsPath, iterationNumber)
     
     # test - do plot
     if test ==  True:
-        
-        # metamodel mean realization quantile
-        outputMetamodelMean = fullMetamodel.evaluateMeanRealization(
-            quantileEstimationInputSample)
-        QMean = outputMetamodelMean.computeQuantilePerComponent(etaB)
         # plot the confidence interval
         plt.rcParams.update({'font.size': 16})
         plt.figure(figsize=[8,5])
@@ -230,9 +229,7 @@ def CIAreaB(fullMetamodel, areaArgs):
         # plt.ylim([-50,550])
         savePath = resultsPath+'/%i_boundsArea'%iterationNumber
         # plt.savefig(savePath, dpi=400, bbox_inches='tight')
-        # save curves
-        saveCIAreaCurves(Q_ub, Q_lb, QMean, boundsArea, scalingArgs, resultsPath,
-                         iterationNumber)
+        
         # # ======================================================================
         # # plot confidecne interval area
         # plt.rcParams.update({'font.size': 16})
