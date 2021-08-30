@@ -47,7 +47,7 @@ def CIAreaA(fullMetamodel, areaArgs):
     
     # unpack arguments
     mesh, quantileEstimationInputSample, CIEta_CIAreaA, __, etaA,__, \
-        numberOfAnalyses, iterationNumber, test , scalingArgs, resultsPath = areaArgs
+        numberOfAnalyses, iterationNumber, test , save, scalingArgs, resultsPath = areaArgs
     
     # get mesh and number of vertices
     verticesNumber = mesh.getVerticesNumber()
@@ -82,7 +82,8 @@ def CIAreaA(fullMetamodel, areaArgs):
     # outputMetamodelMean = fullMetamodel.evaluateMeanRealization(quantileEstimationInputSample)
     # QMean = outputMetamodelMean.computeQuantilePerComponent(etaA)
     # save curves 
-    saveCIAreaCurves(QQ_ub, QQ_lb, QQ_mean, CIArea, scalingArgs, resultsPath, iterationNumber)
+    if save == True:
+        saveCIAreaCurves(QQ_ub, QQ_lb, QQ_mean, CIArea, scalingArgs, resultsPath, iterationNumber)
     
     if test ==True:
         # plot the confidence interval
@@ -186,7 +187,7 @@ def CIAreaB(fullMetamodel, areaArgs):
     
     # unpack arguments
     mesh, quantileEstimationInputSample, __, NSigma_CIAreaB, __, etaB, __, \
-        iterationNumber, test, scalingArgs, resultsPath = areaArgs
+        iterationNumber, test, save, scalingArgs, resultsPath = areaArgs
     
     # get mesh and number of vertices
     verticesNumber = mesh.getVerticesNumber()
@@ -212,7 +213,8 @@ def CIAreaB(fullMetamodel, areaArgs):
     outputMetamodelMean = fullMetamodel.evaluateMeanRealization(quantileEstimationInputSample)
     QMean = outputMetamodelMean.computeQuantilePerComponent(etaB)
     # save curves
-    saveCIAreaCurves(Q_ub, Q_lb, QMean, boundsArea, scalingArgs, resultsPath, iterationNumber)
+    if save == True:
+        saveCIAreaCurves(Q_ub, Q_lb, QMean, boundsArea, scalingArgs, resultsPath, iterationNumber)
     
     # test - do plot
     if test ==  True:
