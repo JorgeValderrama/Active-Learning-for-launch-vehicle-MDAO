@@ -35,6 +35,9 @@ Git LFS was used to compress a large file containing a dataset for Dymos. Hence 
 * git clone "link to this repo"
 * run the main.py file 
 
+## Publication
+Some of the results from this project are featured in the following publication:
+https://www.mdpi.com/2076-3417/12/19/10027
 
-### Acknowledgements
+## Acknowledgements
 This work was developed during my internship at ONERA - The French aerospace lab, and was possible thanks to guidance and help of Dr. Loïc Brevault and Dr. Mathieu Balesdent.
