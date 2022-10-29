@@ -1,12 +1,6 @@
 # Active learning technique for quantile estimation
 
-This code estimates a quantile of an uni-dimensional field variable of a stochastic
-process. It uses the Karhunen-Loève loeve (KL) decomposition to reduce the 
-dimensonality of the stochastic process and predict new outputs based on a 
-surrogate model  of the uncertain variables of the KL decomposition using
-Gaussian process (GP). The active learning technique looks to reduce the 
-vairance of the GPs by identifying in an optimization loop the new training samples
-that contribute the most for this purpose.
+The coupling of uncertainty quantification methodologies with multidisciplinary optimization tools for the early design phase of launch vehicles is computationally intensive. This is mainly due to the strategies for multidisciplinary coupling satisfaction and the required optimal control methods for the trajectory discipline. The early design phase is characterized by a high number of input uncertain variables (e.g., specific impulse, drag coefficient) that render uncertain the output fields (e.g., the optimal speed profile as function of time and the optimal pressure distribution on aerodynamic surfaces). The output fields are comprised of a high number of correlated aleatory variables that make even more daunting the uncertainty quantification task. This work presents an Active Learning (AL) methodology for field variable quantile estimation relying on a surrogate model to reduce the computational cost. Such a surrogate model utilizes Gaussian processes, model order redcution methods and evolutionary optimization.The computed quantiles are useful to characterize flight envelops of launch vehicles. An example case is demonstrated for the quantile estimation of the resulting state variables from the Multidisciplinary Design Analysis and Optimization Proposed methods (MDAO) of a Two-Stage-To-Orbit (TSTO) launch vehicle. The methodology improves the accuracy of the An active learning methodology for the estimation of predicted quantiles and outperforms an aleatory enrichment strategy.
 
 Two example cases are presented in the script "ActiveLearningProblem".
 A simple case using the Onera Damage Model for Composite Material with Ceramix 
